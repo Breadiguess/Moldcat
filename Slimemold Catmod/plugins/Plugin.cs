@@ -3,6 +3,7 @@ using BepInEx;
 using UnityEngine;
 using SlugBase.Features;
 using static SlugBase.Features.FeatureTypes;
+using RWCustom;
 
 namespace SlugTemplate
 {
@@ -15,14 +16,15 @@ namespace SlugTemplate
         public static readonly PlayerFeature<bool> ExplodeOnDeath = PlayerBool("moldcat/explode_on_death");
         public static readonly GameFeature<float> MeanLizards = GameFloat("moldcat/mean_lizards");
       //public static readonly PlayerFeature<float> CrawlStealth = PlayerFloat("moldcat/crawlstealth");
-        public static readonly PlayerFeature<bool> WeakAssArms = PlayerFloat("moldcat/WeakAssArms");
+        public static readonly PlayerFeature<bool> WeakAssArms = PlayerBool("moldcat/WeakAssArms");
         // Add hooks
+        public bool IsInit = False;
         public void OnEnable()
         {
             On.RainWorld.OnModsInit += Extras.WrapInit(LoadResources);
 
             // Put your custom hooks here!
-            On.Player.Throw += Player_Throw;
+            On.Spear.Thrown += Spear_thrown;
             On.Player.Jump += Player_Jump;
             On.Player.Die += Player_Die;
             On.Lizard.ctor += Lizard_ctor;
@@ -31,17 +33,8 @@ namespace SlugTemplate
         // Load any resources, such as sprites or sounds
         private void LoadResources(RainWorld rainWorld)
         {
-            orig.Invoke(self);
-            try
-            (
-                bool isInit == this.IsInit;
-                if(!isInit)
-                {
-                    this.IsInit == true;
-                    Futile.atlasManager.LoadAtlas("atlases/moldcathead");
-                    Futile.atlasManager.LoadAtlas("atlases/moldcatface");
-                }
-            )
+            Futile.atlasManager.LoadAtlas("atlases/moldcathead");
+            Futile.atlasManager.LoadAtlas("atlases/moldcatface");
         }
 
         // Implement MeanLizards
@@ -56,10 +49,10 @@ namespace SlugTemplate
         }
 
 
-        private void Spear_thrown(On.Spear.Orig_Thrown orig, Spear self, Creature thrownby, Vector2 thrownPos, Vector2? firstFrameTraceFromPos, IntVetor2 throwDir, float frc, bool eu)
+        private void Spear_thrown(On.Spear.Orig_Thrown orig, Spear self, Creature thrownby, Vector2 thrownPos, Vector2? firstFrameTraceFromPos, IntVector2 throwDir, float frc, bool eu)
         {
             orig.Invoke(self, thrownBy, throwPos, firstFrameTraceFromPos, throwDir, frc, eu);
-            Player player == thrownBy as Player;
+            Player player = thrownBy as Player;
             if(player!= null && Plugin.WeakAssArms.TryGet(player, out bool WeakAssArms) && WeakAssArms)
             {
                 self.ChangeMode(Weapon.Mode.Free);
@@ -96,7 +89,7 @@ namespace SlugTemplate
                 room.AddObject(new Explosion.ExplosionLight(pos, 280f, 1f, 7, color));
                 room.AddObject(new Explosion.ExplosionLight(pos, 230f, 1f, 3, new Color(1f, 1f, 1f)));
                 room.AddObject(new ExplosionSpikes(room, pos, 14, 30f, 9f, 7f, 170f, color));
-                room.AddObject(new ShockWave(pos, 330f, 0.045f, 5, false));
+                room.AddObject(new ShockWave(pos, 330f, 0.045f, 5, False));
 
                 room.ScreenMovement(pos, default, 1.3f);
                 room.PlaySound(SoundID.Bomb_Explode, pos);
