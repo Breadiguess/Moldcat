@@ -1,0 +1,53 @@
+{
+	"id": "moldcat",
+	"name": "Damnation",
+	"description": "Error 404 no character found.<LINE> i am suffering",
+	"features":{
+		"color": "f4794c",
+		"custom_colors": [
+			{ "name": "Body", "story": "3c3c3c" },
+			{ "name": "Eyes", "story": "f4794c" }
+		],
+		"start_room": "SH_B06",
+		"weight": [0.65, 1],
+		"tunnel_speed": [1.9, 1.5],
+		"climb_speed": [1.95, 1.5],
+		"walk_speed": 0.5,
+		"crouch_stealth": [0.1, 1],
+		"throw_skill": 0,
+		"auto_grab_batflies": false,
+		"lung_capacity": 100,
+		"back_spear": false,
+		"can_maul": true,
+		"maul_damage": 3,
+		"loudness": [0.7, 1.5],	
+		"alignments": {
+			"Scavengers": { "like": -1, "locked": true },
+			"Spider": {"like": 1, "locked": true },
+			"MotherSpider": {"like": 0.8, "locked": true},
+			"WormGrass": {"like": 1, "locked": true}
+			}
+		},
+		"diet": {
+			"corpses": 1,
+			"plants": -1,
+			"meat": 0.5,
+			"overrides": {
+				"Scavenger": 1.25
+  			}
+		},
+		"karma": 0,
+		"karma_cap": 5,
+		"guide_overseer": 0,
+		"has_dreams": false,
+		"cycle_length_min": 10,
+		"cycle_length_max": 14,
+		"perma_unlock_gates": false,
+		"select_menu_scene": "Moldcat",	
+		"select_menu_scene_ascended": "Moldcat_Ascended",
+		"starve_scene": "Moldcat_Starve",
+		"sleep_scene": "Moldcat_sleep",
+		"food_min": 5,
+		"food_max": 6,
+		"world_state": "Red"
+}

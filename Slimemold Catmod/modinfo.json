@@ -1,0 +1,9 @@
+﻿{
+	"id": "moldcat",
+	"name": "Placeholderbutbiggersothatitseasierformetoseebecauseitspainfulhowsmallthetextisspeciallywhenyourtryngtofindomethingalsohi",
+	"version": "0.1.0",
+	"authors": "Bread",
+	"description": "my first mod, please go easy on me",
+	"requirements": [ "slime-cubed.slugbase" ],
+	"requirements_names": [ "SlugBase" ]
+}
