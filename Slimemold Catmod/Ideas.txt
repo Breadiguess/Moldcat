@@ -1,0 +1,20 @@
+//list of ideas, because i get very ambitious and who knows if i'll ever figure out the majority of this list
+//1. inability to throw spears, trades off for increased maul damage and the ability to lunge at enemies to deal damage
+//2. face that splits apart (think like some sort of worm from science fiction)
+//3. some sort of scream ability that frightens hostile creatures
+//4. on death, become some sort of hunter longlegs type creature (friendly to you, but its very weak)
+//5. face split thing triggers while eating and doing the lunge attack thing
+//6. figure out how to make moon afraid of the player, and have 5 Pebs tell it to "kill yourself, NOW!"
+//7. make coalesepedes (spiders), wormgrass, and mother spiders not attack the player
+//8. give some sort of reward for killing raindeer
+//9. night vision (kind of like the drone masters control grid/overseer's outline) while in dark areas 
+//10. kill 5 pebs because the rot isnt doing it fast enough hehehe
+//11. steal the friend's crawl speed mechanic 
+//12. eventually balance stats
+//13. timeline planned: between rivulet and saint
+//14. get actual art
+//15. add sound effects
+//16. learn how to code C# 
+//17. give it a desert eagle xix (in game files only)
+//18. actually make the menu, sleep, ascended portraits work
+//19. commit grave crimes against the scavenger population
